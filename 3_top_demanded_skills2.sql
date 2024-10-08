@@ -1,15 +1,12 @@
 /*
-What are the top skills based on salary.
+What are the most in-demand skills for a given role.
 */
-select skills, round(avg(salary_year_avg),0) as avg_salary
+select skills, count(skills_job_dim.job_id) as demand_count
 FROM job_postings_fact
 INNER JOIN skills_job_dim ON job_postings_fact.job_id= skills_job_dim.job_id 
 inner join skills_dim on skills_dim.skill_id=skills_job_dim.skill_id
 where job_postings_fact.job_title_short='Data Analyst'
 and job_postings_fact.job_work_from_home=True
-and salary_year_avg is not null
 group by skills
-
-order by avg_salary desc
-limit 25
-;
+order by demand_count desc
+limit 5
