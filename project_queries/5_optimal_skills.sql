@@ -1,6 +1,7 @@
 /*
 Find skills that are both in high demand and that offer the highest
 salaries.
+Results of two CTE's are joined to get the results for this query.
 */
 
 WITH skills_demand AS (

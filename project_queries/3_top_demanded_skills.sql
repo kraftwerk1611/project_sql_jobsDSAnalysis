@@ -1,5 +1,7 @@
 /*
 What are the most in-demand skills for a given role.
+There is many-to-many relationship between tables. First a table is joined with the junction table skills_job_dim.ABORT
+Then the third table is joined with the result of this CTE.
 */
 
 WITH remote_job_skills AS (

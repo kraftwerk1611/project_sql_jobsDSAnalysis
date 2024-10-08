@@ -1,5 +1,7 @@
 /*
 What are the top skills based on salary.
+Many-to-Many is implemented using two inner joins. Each table is joined with junction table on its
+primary key.
 */
 select skills, round(avg(salary_year_avg),0) as avg_salary
 FROM job_postings_fact
